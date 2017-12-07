@@ -7,6 +7,7 @@ def find_substring(s, words)
 	joins = []
   joins << words.join
   joins << words.reverse.join
+  
   joins.each { |concat| indices << s.index(concat) if s.include?(concat) }
   indices
 end
@@ -14,4 +15,9 @@ end
 s = "barfoothefoobarman"
 words = ["foo", "bar"]
 
-p find_substring(s, words)
+find_substring(s, words)
+
+str = "barfoofoobarthefoobarman"
+palabras = ["bar","foo","the"]
+
+p find_substring(str, palabras)
