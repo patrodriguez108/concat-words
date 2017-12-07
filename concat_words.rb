@@ -3,13 +3,15 @@
 # find starting indices of concats
 
 def find_substring(s, words)
-    a_join = words.join
-    if s.include?(a_join)
-    	
-    end
+	indices = []
+	joins = []
+  joins << words.join
+  joins << words.reverse.join
+  joins.each { |concat| indices << s.index(concat) if s.include?(concat) }
+  indices
 end
 
 s = "barfoothefoobarman"
 words = ["foo", "bar"]
 
-find_substring(s, words)
+p find_substring(s, words)
